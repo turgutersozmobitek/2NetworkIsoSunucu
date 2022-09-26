@@ -1,24 +1,24 @@
 #bir oluşturalım 
 
-resource "vcd_vapp_org_network" "vappOrgNet" {
-  org = var.org_name
-  vdc = var.vdc_name
-  vapp_name = var.vapp_name
+#resource "vcd_vapp_org_network" "vappOrgNet" {
+ # org = var.org_name
+ # vdc = var.vdc_name
+ # vapp_name = var.vapp_name
 
   # Comment below line to create an isolated vApp network
-  org_network_name = var.org_network_name
+#  org_network_name = var.org_network_name
  
-}
+#}
 
-resource "vcd_vapp_org_network" "vappOrgNet2" {
-  org = var.org_name
-  vdc = var.vdc_name
-  vapp_name = var.vapp_name
-
-  # Comment below line to create an isolated vApp network
-  org_network_name = var.org2_network_name
- 
-}
+#resource "vcd_vapp_org_network" "vappOrgNet2" {
+#  org = var.org_name
+#  vdc = var.vdc_name
+#  vapp_name = var.vapp_name
+#
+#  # Comment below line to create an isolated vApp network
+#  org_network_name = var.org2_network_name
+# 
+#}
 
 resource "vcd_vm_internal_disk" "disk1" {
   vapp_name       = var.vapp_name
@@ -26,8 +26,7 @@ resource "vcd_vm_internal_disk" "disk1" {
   bus_type        = "paravirtual"
   size_in_mb      = var.vm_disk_size
   bus_number      = 0
-  unit_number     = 1
-  allow_vm_reboot = true
+  unit_number     = 0
   depends_on      = [vcd_vapp_vm.web1]
 
 }
@@ -51,7 +50,7 @@ resource "vcd_vapp_vm" "web1" {
   disk {
     name        = var.vm_disk_name
     bus_number  = 0
-    unit_number = 1
+    unit_number = 0
   }
 
 
