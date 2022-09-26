@@ -45,7 +45,6 @@ resource "vcd_vapp_vm" "web1" {
 
   disk {
     name        = var.vm_disk_name
-    vapp_name   = var.vapp_name
     vm_name     = var.vm_name
     bus_number  = 0
     unit_number = 0
