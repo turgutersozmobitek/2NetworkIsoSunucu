@@ -34,7 +34,6 @@ resource "vcd_vapp_vm" "web1" {
   name          = var.vm_name
   computer_name = var.computer_name
   catalog_name  = var.catalog_name
-  template_name = var.template_name
   memory        = var.vm_memory
   cpus          = var.vm_cpu
   cpu_cores     = var.vm_cpu_core
