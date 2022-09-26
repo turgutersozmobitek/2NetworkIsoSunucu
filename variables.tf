@@ -118,7 +118,7 @@ variable "org2_network_name" {
     default     = "list"
 }
 
-variable "2adapter_type" {
+variable "adapter_type_2" {
     type        = string
     description = "Adapter Type:*"
     default     = "list"
