@@ -35,13 +35,15 @@ resource "vcd_vapp_vm" "web1" {
   name          = var.vm_name
   computer_name = var.computer_name
   catalog_name  = var.catalog_name
+  os_type       = var.os_family
+  hardware_version = "vmx-14"
+  boot_image       = var.boot_image
   memory        = var.vm_memory
   cpus          = var.vm_cpu
   cpu_cores     = var.vm_cpu_core
   cpu_hot_add_enabled=true
   memory_hot_add_enabled=true
   power_on=false
-
 
   disk {
     name        = var.vm_disk_name
